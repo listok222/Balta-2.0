@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="Балтика — премиальный 3D-опыт. Холод, который остаётся." />
+  <title>Балтика — Холод, который остаётся</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.170.0/examples/jsm/",
+      "gsap": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js",
+      "gsap/ScrollTrigger": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/ScrollTrigger.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="age-gate" class="age-gate">
+    <div class="age-gate__content">
+      <div class="age-gate__logo">БАЛТИКА</div>
+      <h1>Вам уже исполнилось 18 лет?</h1>
+      <p>Сайт содержит информацию об алкогольной продукции и предназначен только для лиц, достигших 18 лет.</p>
+      <div class="age-gate__buttons">
+        <button id="age-yes" class="btn btn--primary">Мне есть 18 лет</button>
+        <button id="age-no" class="btn btn--ghost">Мне нет 18 лет</button>
+      </div>
+      <p class="age-gate__disclaimer">Чрезмерное употребление алкоголя вредит вашему здоровью</p>
+    </div>
+  </div>
+
+  <div id="app" class="app hidden">
+    <div id="canvas-container"></div>
+    <div id="scroll-content" class="scroll-content">
+      <section class="section section--hero" data-section="hero">
+        <div class="hero-text">
+          <h1 class="hero-title">БАЛТИКА</h1>
+          <p class="hero-subtitle">Холод, который остаётся</p>
+        </div>
+      </section>
+      <section class="section section--varieties" data-section="varieties">
+        <div class="section-inner">
+          <h2 class="section-title">Сорта</h2>
+          <p class="section-lead">Каждый номер — свой характер. Выбери свой холод.</p>
+          <div class="varieties-grid" id="varieties-grid"></div>
+        </div>
+      </section>
+      <section class="section section--history" data-section="history">
+        <div class="section-inner">
+          <h2 class="section-title">История</h2>
+          <div class="timeline">
+            <div class="timeline-item"><span class="timeline-year">1992</span><p>Первая варка в Санкт-Петербурге. Начало легенды.</p></div>
+            <div class="timeline-item"><span class="timeline-year">1990-е</span><p>Балтика становится брендом №1 в России.</p></div>
+            <div class="timeline-item"><span class="timeline-year">Экспорт</span><p>Пиво из России — в 45+ стран мира.</p></div>
+            <div class="timeline-item"><span class="timeline-year">Сегодня</span><p>Премиум-репозиционирование. Новый холод.</p></div>
+          </div>
+        </div>
+      </section>
+      <section class="section section--process" data-section="process">
+        <div class="section-inner">
+          <h2 class="section-title">Как варится</h2>
+          <p class="section-lead">Солод. Хмель. Вода. Время. Холод.</p>
+          <div class="process-steps">
+            <div class="process-step"><span class="step-num">01</span><h3>Солод</h3><p>100% ячменный солод собственного производства</p></div>
+            <div class="process-step"><span class="step-num">02</span><h3>Варка</h3><p>Классическая технология, проверенная десятилетиями</p></div>
+            <div class="process-step"><span class="step-num">03</span><h3>Брожение</h3><p>Естественное брожение. Без ускорителей</p></div>
+            <div class="process-step"><span class="step-num">04</span><h3>Холод</h3><p>Охлаждение. Фильтрация. Розлив в лёд</p></div>
+          </div>
+        </div>
+      </section>
+      <section class="section section--buy" data-section="buy">
+        <div class="section-inner">
+          <h2 class="section-title">Где купить</h2>
+          <p class="section-lead">Найди Балтику рядом с собой</p>
+          <a href="https://baltika.ru" target="_blank" rel="noopener" class="btn btn--primary">Найти магазин</a>
+        </div>
+      </section>
+      <section class="section section--responsible" data-section="responsible">
+        <div class="section-inner">
+          <h2 class="section-title">18+</h2>
+          <p class="responsible-text">Пиво — для тех, кто выбирает сам.<br />Пейте ответственно.</p>
+          <p class="responsible-small">Чрезмерное употребление алкоголя вредит вашему здоровью</p>
+        </div>
+      </section>
+    </div>
+    <header class="header">
+      <div class="logo">БАЛТИКА</div>
+      <div class="progress-bar"><div class="progress-bar__fill" id="progress-fill"></div></div>
+    </header>
+    <div class="scroll-hint" id="scroll-hint"><span>Скролль</span><div class="scroll-hint__line"></div></div>
+  </div>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
